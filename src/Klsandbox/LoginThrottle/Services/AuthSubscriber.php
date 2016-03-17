@@ -42,6 +42,6 @@ class AuthSubscriber
      */
     public function subscribe(Dispatcher $dispatcher)
     {
-        $dispatcher->listen('auth.login', '\App\Services\Throttle\AuthSubscriber@onLoginSuccess');
+        $dispatcher->listen('auth.login', '\Klsandbox\LoginThrottle\Services\AuthSubscriber@onLoginSuccess');
     }
 }
