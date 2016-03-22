@@ -21,7 +21,7 @@ class LoginThrottleServiceProvider extends ServiceProvider {
 	{
 		// Throttle main class
 		$this->app->singleton('throttle', function () {
-			return new Throttle(config('throttle'));
+			return new Throttle(config('throttle', []));
 		});
 		$this->app->alias('throttle', Throttle::class);
 	}
