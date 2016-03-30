@@ -1,6 +1,6 @@
 <?php
 Route::group(['middleware' => ['auth']], function () {
-    Route::group(['middleware' => ['auth.admin']], function () {
+    Route::group(['middleware' => ['role:admin']], function () {
         Route::group(['prefix' => 'failed-logins'], function () {
 
             Route::get('list/all', [
