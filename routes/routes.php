@@ -8,7 +8,7 @@ Route::group(['middleware' => ['auth']], function () {
                 'uses' => '\Klsandbox\LoginThrottle\Http\Controllers\LoginAttemptController@index',
             ]);
 
-            Route::delete('purge', [
+            Route::get('purge', [
                 'as' => 'failed-logins.purge',
                 'uses' => '\Klsandbox\LoginThrottle\Http\Controllers\LoginAttemptController@purge',
             ]);

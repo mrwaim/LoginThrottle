@@ -34,6 +34,6 @@ class LoginAttemptController extends Controller
             $attempt->delete();
         }
 
-        return response()->json(['status' => 'ok']);
+        return redirect()->back()->with('success_message', 'Purge complete');
     }
 }

@@ -6,6 +6,7 @@
 
 
 @section('content')
+    @include('elements.success-message-partial')
     <div class="panel panel-default">
         @include('login-throttle::partials._list')
     </div>

@@ -3,7 +3,7 @@
         @if(count($attempts) > 0)
             <div class="panel-actions">
                 <a href="{!! route('failed-logins.purge') !!}"
-                   class="panel-action purge-btn-js">
+                   class="panel-action">
                     <i class="fa fa-trash-o mr-xs"></i>
                     Purge
                 </a>
