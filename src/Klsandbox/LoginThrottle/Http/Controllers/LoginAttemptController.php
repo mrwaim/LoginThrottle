@@ -3,13 +3,10 @@
 namespace Klsandbox\LoginThrottle\Http\Controllers;
 
 use Klsandbox\LoginThrottle\Models\LoginAttempt;
-use DB;
 use App\Http\Controllers\Controller;
 
 /**
  * Class LoginAttemptController
- *
- * @package App\Http\Controllers
  */
 class LoginAttemptController extends Controller
 {
@@ -29,8 +26,7 @@ class LoginAttemptController extends Controller
     public function purge()
     {
         $attempts = LoginAttempt::forSite()->get();
-        foreach ($attempts as $attempt)
-        {
+        foreach ($attempts as $attempt) {
             $attempt->delete();
         }
 

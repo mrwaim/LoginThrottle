@@ -6,13 +6,11 @@ use Illuminate\Events\Dispatcher;
 
 /**
  * Class AuthSubscriber
- *
- * @package App\Services\Throttle
  */
 class AuthSubscriber
 {
     /**
-     * @type Throttle
+     * @var Throttle
      */
     protected $throttle;
 

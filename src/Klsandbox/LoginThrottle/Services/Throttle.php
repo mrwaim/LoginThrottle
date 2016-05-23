@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 /**
  * Class Throttle
- *
- * @package App\Services\Throttle
  */
 class Throttle
 {
@@ -19,7 +17,7 @@ class Throttle
     const DEF_LIMIT_ATMP = 10;
 
     /**
-     * @type array
+     * @var array
      */
     protected $options = [];
 
@@ -37,6 +35,7 @@ class Throttle
      * Check request
      *
      * @param array|Request $request
+     *
      * @return bool
      */
     public function create(Request $request)
@@ -69,7 +68,9 @@ class Throttle
 
     /**
      * Register hit
+     *
      * @param array $data
+     *
      * @return $this
      */
     public function hit(array $data)
@@ -81,6 +82,7 @@ class Throttle
 
     /**
      * Reset atempts cache
+     *
      * @param string $ip
      * @param string $name
      */

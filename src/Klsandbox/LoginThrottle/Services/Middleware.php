@@ -7,13 +7,11 @@ use Symfony\Component\HttpKernel\Exception\TooManyRequestsHttpException;
 
 /**
  * Class Middleware
- *
- * @package App\Services\Throttle
  */
 class Middleware
 {
     /**
-     * @type Throttle
+     * @var Throttle
      */
     protected $throttle;
 
@@ -30,6 +28,7 @@ class Middleware
     /**
      * @param Request $request
      * @param \Closure $next
+     *
      * @return \Closure
      */
     public function handle(Request $request, \Closure $next)
@@ -42,5 +41,4 @@ class Middleware
 
         return $next($request);
     }
-
 }
