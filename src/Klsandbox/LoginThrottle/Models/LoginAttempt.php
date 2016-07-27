@@ -4,8 +4,6 @@ namespace Klsandbox\LoginThrottle\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Klsandbox\SiteModel\SiteExtensions;
-
 /**
  * Class LoginAttempt
  *
@@ -22,13 +20,9 @@ use Klsandbox\SiteModel\SiteExtensions;
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\LoginThrottle\Models\LoginAttempt whereClientIp($value)
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\LoginThrottle\Models\LoginAttempt whereIcNumber($value)
  * @mixin \Eloquent
- * @property integer $site_id
- * @method static \Illuminate\Database\Query\Builder|\Klsandbox\LoginThrottle\Models\LoginAttempt whereSiteId($value)
  */
 class LoginAttempt extends Model
 {
-    use SiteExtensions;
-
     /**
      * LoginAttempt constructor.
      *

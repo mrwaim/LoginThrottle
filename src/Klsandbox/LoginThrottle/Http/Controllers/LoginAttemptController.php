@@ -15,7 +15,7 @@ class LoginAttemptController extends Controller
      */
     public function index()
     {
-        $attempts = LoginAttempt::forSite()->get();
+        $attempts = LoginAttempt::all();
 
         return view('login-throttle::list-attempts', compact('attempts'));
     }
@@ -25,7 +25,7 @@ class LoginAttemptController extends Controller
      */
     public function purge()
     {
-        $attempts = LoginAttempt::forSite()->get();
+        $attempts = LoginAttempt::all();
         foreach ($attempts as $attempt) {
             $attempt->delete();
         }
