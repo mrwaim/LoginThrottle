@@ -4,6 +4,7 @@ namespace Klsandbox\LoginThrottle\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+
 /**
  * Class LoginAttempt
  *
