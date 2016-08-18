@@ -2,6 +2,7 @@
 
 namespace Klsandbox\LoginThrottle\Services;
 
+use Illuminate\Auth\Events\Login;
 use Illuminate\Events\Dispatcher;
 
 /**
@@ -31,7 +32,7 @@ class AuthSubscriber
     {
         $this->throttle->reset(
             app('request')->getClientIp(),
-            $event['ic_number']
+            $event->user->ic_number
         );
     }
 
@@ -40,6 +41,6 @@ class AuthSubscriber
      */
     public function subscribe(Dispatcher $dispatcher)
     {
-        $dispatcher->listen('auth.login', '\Klsandbox\LoginThrottle\Services\AuthSubscriber@onLoginSuccess');
+        $dispatcher->listen(Login::class, '\Klsandbox\LoginThrottle\Services\AuthSubscriber@onLoginSuccess');
     }
 }
